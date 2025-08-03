@@ -1,0 +1,88 @@
+{
+	"versionName": "1.2.0",         // This is the version name of the latest version
+	"versionCode": 20,              // Version code is used to compare versions. Bigger version code = newer version. If you don't include this, versionName will be used to compare versions but it might not be accurate
+	"versionFormat": "%versionName%",    //You can use %variable_name% format to represent a variable. All other fields in the JSON that are not list or object are variables.
+	"sponsors": [{                 // A sponsors object consists of an array of sponsor objects
+			"category": "gold",
+	                "displayName": "sponsors.test",        // You can use translation keys here, this will be the name that's actually displayed
+			"titleFormat": ["GOLD", "BOLD"],       // How to display the category title in game. View Minecraft's format codes for all available options.
+			"sponsorFormat": ["GOLD"],
+			"sponsors": [{
+					"name": "TCreopargh",
+					"uuid": "2d06868c-6d9b-433a-a356-1a7993b62b8d"           // You can use either name or uuid to represent a player. When both defined, UUID takes priority.
+				},
+				{
+					"name": "Notch"
+				},
+				"Dinnerbone"        // You can use strings instead of objects here. It will take it as a name if it doesn't match the uuid format.
+			]
+		},
+		{
+			"category": "diamond",
+			"titleFormat": ["AQUA", "BOLD"],
+			"sponsorFormat": ["AQUA"],
+			"sponsors": [{
+				"name": "Herobrine"
+			}]
+		}
+	],
+	"sponsorMessage": ["", {                          // Use Minecraft's raw JSON text format for this (like how you send /tellraw command), this text displays on the bottom of the sponsor list. 
+		"text": "Thank all of you for sponsoring!",
+		"color": "gold"
+	}, {
+		"text": "\n"
+	}, {
+		"text": "Become a sponsor!",
+		"color": "red",
+		"bold": true,
+		"underlined": true,
+		"clickEvent": {
+			"action": "open_url",
+			"value": "http://patreon.tcreopargh.xyz/"
+		}
+	}],
+	"changelogs": {
+		"1.2.0": [
+			"Fixed some more bugs",
+			"Removed Herobrine",
+			"Fixed the version number being too low"
+		],
+		"1.1.0": [
+			"Fixed some bugs"
+		]
+	},
+	"variables": {                    // You can use variables to format strings or get them in CraftTweaker
+		"testInt": 1000,
+		"testString": "abcde",
+		"testArray": [
+			1,
+			2,
+			3
+		],
+		"testData": {
+			"a": [
+				"111",
+				"222",
+				"333"
+			]
+		}
+	},
+	"welcomeMessage": ["", {            // Also raw JSON format
+		"text": "Hello, welcome to play ",
+		"color": "gold"
+	}, {
+		"text": "TestPack!",
+		"color": "aqua"
+	}, {
+		"text": "\n"
+	}, {
+		"text": "Join our discord server!",
+		"bold": true,
+		"underlined": true,
+		"color": "blue",
+		"clickEvent": {
+			"action": "open_url",
+			"value": "https://discord.gg/WbrB4VaUsz"
+		}
+	}]
+}
